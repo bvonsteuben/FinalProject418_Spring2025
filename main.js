@@ -205,7 +205,7 @@ $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", f
     data.prints.forEach(function(print, index) {
         let tabId = ids[index];
 
-        // Build output HTML with image and description
+        //build output HTML with image and description
         let output = `
             <figure>
                 <img src="${print.image}" alt="${print.title}">
@@ -213,7 +213,7 @@ $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", f
             <p class="description" id="desc-${tabId}">${print.description}</p>
         `;
 
-        // Inject into the tab content panel
+        //inject into the tab content panel
         document.getElementById(tabId).innerHTML = output;
     });
 }).fail(function(jqxhr, textStatus, error) {
@@ -234,19 +234,29 @@ window.onload = function () {
         }
     }
 
-    // Add event listener to the dark mode toggle button
+    //add event listener to the dark mode toggle button
     document.getElementById("darkmode").addEventListener("click", toggleMode);
 };
 
-// Function to toggle light/dark mode and update localStorage
+//function to toggle light/dark mode and update localStorage
 function toggleMode() {
     // Toggle the class on the <body>
     document.body.classList.toggle("dark-mode");
 
-    // Save the user's preference to localStorage
+    //save the user's preference to localStorage
     if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("mode", "dark");
     } else {
         localStorage.setItem("mode", "light");
     }
 }
+
+$(document).ready(function(){
+    $('.carousel').slick({
+      dots: true,
+      arrows: true,
+      autoplay: false,  // optional
+      adaptiveHeight: true
+    });
+  });
+  

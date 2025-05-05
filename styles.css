@@ -440,6 +440,22 @@ body.dark-mode #game-result {
     padding-left: 40px;
 }
 
+#gameInfo .carousel {
+    margin-top: 40px;
+    max-width: 400px;
+    margin-left: auto;
+  }
+  
+  #gameInfo .carousel figure {
+    padding-left: 0;
+  }
+  
+  #gameInfo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
 
 /* contact and form styling */
 #contactWrapper {
