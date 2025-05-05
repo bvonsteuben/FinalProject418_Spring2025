@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Bethany Von Steuben">
+    <meta name="description" content="Discover Bizi Creative, a visual identity and web design studio out of Portland, OR. Explore, shop graphic prints, and play to win! Contact us today!">
+    <title>Bizi Creative - A Brand Identity and Web Design Studio</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="shortcut icon" href="Images/BiziFavicon.png">
+
+    <!-- links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+
+    <!-- css and js -->
+    <link href="styles.css" rel="stylesheet">
+    <script src="main.js" defer></script>
+</head>
+
+<body id="light">
+    <!-- skip link -->
+    <a id="skip" href="#mainContent">Skip to Main Content</a>
+
+    <!-- header -->
+    <header>
+        <div id="leftSide">
+            <h1>Bizi Creative</h1>
+            <p>A brand identity and web design studio</p>
+            <img id="mono" src="Images/biziMonogramLogoOrng.png" alt="Bizi Creative logo featuring a bold blackletter monogram in Reanimation Blackletter Bold font.">
+        </div>
+        <div id="rightSide">
+            <nav>
+                <h2 class="sr-only">Main Navigation</h2>
+                <ul>
+                    <li><a href="#prints" class="navLink">Prints</a></li>
+                    <li><a href="#game" class="navLink">Game</a></li>
+                    <li><a href="#contact" class="navLink">Contact</a></li>
+                </ul>
+            </nav>
+            <svg id="darkmode" xmlns="http://www.w3.org/2000/svg" width="30px" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+        </div>
+    </header>
+
+    <!-- main content -->
+    <main id="mainContent">
+        <section id="firstFold">
+            <h2>Sites Brands <span>&</span> Stuff</h2>
+            <p>We craft captivating websites and distinctive brands, weaving your story into every pixel.</p>
+        </section>
+
+        <!-- introducing Bizi Creative -->
+        <section id="ready">
+            <div class="wrapper1">
+                <h2>Ready when <span>You</span> are.</h2>
+                <div class="buttonWrapper">
+                    <button class="smallButton">Book Now</button>
+                    <button class="smallButton">Testimonials</button>
+                </div>
+            </div>
+            <video class="video" autoplay loop muted controls><source src="https://video.wixstatic.com/video/76f7fe_fe044bfeedb04cbcba805a580a22f45f/1080p/mp4/file.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <!-- product display section-->
+        <section id="prints">
+            <h2><span>New!</span> Prints by Bizi Creative</h2>
+            <div class="leftSide">
+                <button class="printTitleBtn" data-target="bangarang">Bangarang!</button>
+                <button class="printTitleBtn" data-target="fly">You Can Fly</button>
+                <button class="printTitleBtn" data-target="together">Better Together</button>
+                <div class="info">
+                    <p><strong>Size:</strong> 8x10</p>
+                    <p class="description" id="printDescription">Description here</p>
+                    <p><strong>Price:</strong> $18</p>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="printItem visible" id="bangarang">
+                    <figure>
+                        <img src="Images/BANGARANG.jpg"
+                            alt="Black and white graphic print with bangagrang repeated in a stacked, boxy style. The all-caps white text on a black background features a grainy, ink-bleed, blurry graphic effect, evoking a rebellious, adventurous spirit inspired by the rallying cry Rufioooo!">
+                    </figure>
+                </div>
+                <div class=" printItem" id="fly">
+                    <figure>
+                        <img src="Images/YouCanFly.jpg"
+                            alt="Black and white graphic print with a white background featuring the phrase You Can Fly stacked three times in large text. The design includes a grainy, wrinkled texture overlay, with a black Magic 8 Ball above displaying You're Doing it, Peter, encouraging determination, inspiring confidence, and letting go of self-doubt.">
+                    </figure>
+                </div>
+                <div class="printItem" id="together">
+                    <figure>
+                        <img src="Images/BetterTogether.jpg"
+                            alt="Black and white graphic print featuring two hands making a pinky promise, with a halftone and grainy effect. The phrase Two is One, One is None appears in large font with a bold orange knockout outline showing the hands through it. The phrase repeats at the top, with Better Together hand-in-hand messaging bordering the top and bottom, symbolizing trust, partnership, and strength.">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!--game section -->
+        <section id="game">
+            <h2>Play <span>Now!</span></h2>
+            <p>Enter a number between 1 and 10</p>
+            <form id="game-form">
+                <label for="user-number" class="sr-only">User Number</label>
+                <input type="text" id="user-number" name="user-number">
+                <button type="submit">Submit</button>
+                <div id="game-error"></div>
+            </form>
+            <p id="guess-output" aria-live="polite"></p>
+            <p id="win-message" aria-live="polite"></p>
+            <p id="game-result" aria-live="polite"></p>
+        </section>
+        <section id="gameInfo">
+            <h2><span>Win</span> 3 Free Postcards</h2>
+            <p>Enter a number between 1 and 10 in the box to the left.</p>
+            <p>We will generate a random number.</p>
+            <p>If your number matches, you win!</p>
+            <figure>
+                <img src="Images/Popsicle_GC.jpg" alt="Graphic of a red popsicle with a two wooden sticks to break apart the popsicle in two. The popsicle is melting and dripping with melted red ice and the text 'You're the coolest' is overlaid in white script font">
+            </figure>
+            <figure>
+                <img src="Images/ThankYouBag_GC.jpg" alt="Graphic of a classic plastic grocery store bag with red Thank You repeated 3 times. The bag is a light teal on a black background.">
+            </figure>
+            <figure>
+                <img src="Images/LongTimeNoSee_GC.jpg" alt="Graphic of a pear of round daisy bordered sunglasses. In the left lense a script font reads Long Time and No See is printed on the right lense.">
+            </figure>
+        </section>
+
+        <!-- contact sections-->
+        <div id="contactWrapper">
+            <section id="contact">
+                <h2>Contact Bizi Creative</h2>
+                <p>Let us Help<span>Tell Your Story.</span></p>
+            </section>
+
+            <!-- contact form -->
+            <section id="letsTalk">
+                <h2>Let's talk</h2>
+                <form id="contactForm">
+                    <div>
+                        <label for="firstName">First Name:<span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName">
+                        <span id="firstNameError" class="error"></span>
+                    </div>
+
+                    <div>
+                        <label for="lastName">Last Name:<span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName">
+                        <span id="lastNameError" class="error"></span>
+                    </div>
+
+                    <fieldset>
+                        <legend>Preferred Method of Contact:<span class="required">*</span></legend>
+                            <label for="email">
+                            <input type="radio" id="email" name="preferredContact" value="email"> Email
+                            </label>
+                            <label for="phone">
+                            <input type="radio" id="phone" name="preferredContact" value="phone"> Phone
+                            </label>
+                            <span id="preferredContactError" class="error"></span>
+                    </fieldset>
+                    
+                    <div>
+                        <label for="emailInput">Email:</label>
+                        <input type="email" id="emailInput" name="emailInput">
+                        <span id="emailError" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="phoneInput">Phone Number:</label>
+                        <input type="tel" id="phoneInput" name="phoneInput">
+                        <span id="phoneError" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="comments">Comments:<span class="required">*</span></label>
+                        <textarea id="comments" name="comments"></textarea>
+                        <span id="commentsError" class="error"></span>
+                    </div>
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+                <div id="success" class="hide">
+                    <h4>Thank you!</h4>
+                    <p>You have successfully submitted the form. Here is the information you sent us:</p>
+                    <p id="formSub"></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!--footer -->
+    <footer>
+        <div class="contactInfo">
+            <h3>Contact</h3>
+            <p>Email: hello@bizicreative.com</p>
+            <p>Phone: 808.446.6040</p>
+            <ul class="socialIcons">
+                <li><a href="https://www.instagram.com/bizicreative/" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M10.202,2.098c-1.49,.07-2.507,.308-3.396,.657-.92,.359-1.7,.84-2.477,1.619-.776,.779-1.254,1.56-1.61,2.481-.345,.891-.578,1.909-.644,3.4-.066,1.49-.08,1.97-.073,5.771s.024,4.278,.096,5.772c.071,1.489,.308,2.506,.657,3.396,.359,.92,.84,1.7,1.619,2.477,.779,.776,1.559,1.253,2.483,1.61,.89,.344,1.909,.579,3.399,.644,1.49,.065,1.97,.08,5.771,.073,3.801-.007,4.279-.024,5.773-.095s2.505-.309,3.395-.657c.92-.36,1.701-.84,2.477-1.62s1.254-1.561,1.609-2.483c.345-.89,.579-1.909,.644-3.398,.065-1.494,.081-1.971,.073-5.773s-.024-4.278-.095-5.771-.308-2.507-.657-3.397c-.36-.92-.84-1.7-1.619-2.477s-1.561-1.254-2.483-1.609c-.891-.345-1.909-.58-3.399-.644s-1.97-.081-5.772-.074-4.278,.024-5.771,.096m.164,25.309c-1.365-.059-2.106-.286-2.6-.476-.654-.252-1.12-.557-1.612-1.044s-.795-.955-1.05-1.608c-.192-.494-.423-1.234-.487-2.599-.069-1.475-.084-1.918-.092-5.656s.006-4.18,.071-5.656c.058-1.364,.286-2.106,.476-2.6,.252-.655,.556-1.12,1.044-1.612s.955-.795,1.608-1.05c.493-.193,1.234-.422,2.598-.487,1.476-.07,1.919-.084,5.656-.092,3.737-.008,4.181,.006,5.658,.071,1.364,.059,2.106,.285,2.599,.476,.654,.252,1.12,.555,1.612,1.044s.795,.954,1.051,1.609c.193,.492,.422,1.232,.486,2.597,.07,1.476,.086,1.919,.093,5.656,.007,3.737-.006,4.181-.071,5.656-.06,1.365-.286,2.106-.476,2.601-.252,.654-.556,1.12-1.045,1.612s-.955,.795-1.608,1.05c-.493,.192-1.234,.422-2.597,.487-1.476,.069-1.919,.084-5.657,.092s-4.18-.007-5.656-.071M21.779,8.517c.002,.928,.755,1.679,1.683,1.677s1.679-.755,1.677-1.683c-.002-.928-.755-1.679-1.683-1.677,0,0,0,0,0,0-.928,.002-1.678,.755-1.677,1.683m-12.967,7.496c.008,3.97,3.232,7.182,7.202,7.174s7.183-3.232,7.176-7.202c-.008-3.97-3.233-7.183-7.203-7.175s-7.182,3.233-7.174,7.203m2.522-.005c-.005-2.577,2.08-4.671,4.658-4.676,2.577-.005,4.671,2.08,4.676,4.658,.005,2.577-2.08,4.671-4.658,4.676-2.577,.005-4.671-2.079-4.676-4.656h0" fill=" #f5f5f5"></path></svg></a></li>
+                <li><a href="https://www.facebook.com/bizicreative" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M16,2c-7.732,0-14,6.268-14,14,0,6.566,4.52,12.075,10.618,13.588v-9.31h-2.887v-4.278h2.887v-1.843c0-4.765,2.156-6.974,6.835-6.974,.887,0,2.417,.174,3.043,.348v3.878c-.33-.035-.904-.052-1.617-.052-2.296,0-3.183,.87-3.183,3.13v1.513h4.573l-.786,4.278h-3.787v9.619c6.932-.837,12.304-6.74,12.304-13.897,0-7.732-6.268-14-14-14Z" fill="#f5f5f5"></path></svg></a></li>
+                <li><a href="https://www.pinterest.com/bizicreative/" target="_blank" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M16,2C8.268,2,2,8.268,2,16c0,5.931,3.69,11.001,8.898,13.041-.122-1.108-.233-2.811,.049-4.02,.254-1.093,1.642-6.959,1.642-6.959,0,0-.419-.839-.419-2.079,0-1.947,1.128-3.4,2.533-3.4,1.194,0,1.771,.897,1.771,1.972,0,1.201-.765,2.997-1.16,4.661-.33,1.393,.699,2.53,2.073,2.53,2.488,0,4.401-2.624,4.401-6.411,0-3.352-2.409-5.696-5.848-5.696-3.983,0-6.322,2.988-6.322,6.076,0,1.203,.464,2.494,1.042,3.195,.114,.139,.131,.26,.097,.402-.106,.442-.342,1.393-.389,1.588-.061,.256-.203,.311-.468,.187-1.749-.814-2.842-3.37-2.842-5.424,0-4.416,3.209-8.472,9.25-8.472,4.857,0,8.631,3.461,8.631,8.086,0,4.825-3.042,8.708-7.265,8.708-1.419,0-2.752-.737-3.209-1.608,0,0-.702,2.673-.872,3.328-.316,1.216-1.169,2.74-1.74,3.67,1.31,.406,2.702,.624,4.145,.624,7.732,0,14-6.268,14-14S23.732,2,16,2Z" fill="#f5f5f5"></path></svg></a></li>
+            </ul>
+        </div>
+        <img src="Images/bizilogogry.svg" alt="Bizi Creative mixed font logo">
+        <p class="copy">Copyright &copy; 2024 Bizi Creative</p>
+    </footer>
+</body>
+</html>
