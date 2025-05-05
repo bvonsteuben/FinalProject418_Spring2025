@@ -328,21 +328,6 @@ body.dark-mode .printTitleBtn:hover {
     padding-right: 40px;
 }
 
-/* hide prints */
-.printItem {
-    display: none;
-}
-
-/*show prints when active*/
-.printItem.visible {
-    display: block;
-}
-
-
-.description {
-    font-size: 1rem;
-    margin: 20px auto;
-}
 
 #prints img {
     max-width: 600px;

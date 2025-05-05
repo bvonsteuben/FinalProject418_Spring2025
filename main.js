@@ -193,5 +193,32 @@ document.getElementById("darkmode").addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
 });
 
-//initialize with the first print visible
-togglePrintVisibility("bangarang");
+//initialize jQuery UI tabs for prints section
+$(function () {
+    $("#tabs").tabs();
+});
+
+
+//AJAX/API - Load print data from Postman mock server
+//using $.getJSON() to retrieve images and descriptions
+//hosted images served from GitHub repo
+$.getJSON("https://77e4098c-b518-409a-9ce5-3f683e99513e.mock.pstmn.io/prints", function(data) {
+    let ids = ["bangarang", "fly", "together"];
+
+    data.prints.forEach(function(print, index) {
+        let tabId = ids[index];
+
+        // Build output HTML with image and description
+        let output = `
+            <figure>
+                <img src="${print.image}" alt="${print.title}">
+            </figure>
+            <p class="description" id="desc-${tabId}">${print.description}</p>
+        `;
+
+        // Inject into the tab content panel
+        document.getElementById(tabId).innerHTML = output;
+    });
+}).fail(function(jqxhr, textStatus, error) {
+    console.error("Error loading API data:", textStatus, error);
+});
