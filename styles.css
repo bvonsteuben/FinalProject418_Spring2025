@@ -286,8 +286,8 @@ body.dark-mode .smallButton:hover {
 }
 
 .leftSide {
-    width: 40%;
-    display: flex;
+    width: 94%;
+    display: block;
     flex-direction: column;
     padding-top: 17.66rem;
 }
@@ -320,20 +320,30 @@ body.dark-mode .printTitleBtn:hover {
     margin-top: 4rem;
 }
 
-.rightSide {
-    flex-grow: 1;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    padding-right: 40px;
-}
 
-
-#prints img {
+#tabs img {
     max-width: 600px;
     height: auto;
     padding-right: 2rem;
     filter: drop-shadow(-18px 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+#tabs > div {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+  
+  #tabs figure {
+    flex-shrink: 0;
+}
+  
+  #tabs .description {
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 600px;
 }
 
 

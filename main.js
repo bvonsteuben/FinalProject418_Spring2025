@@ -202,7 +202,7 @@ $(function () {
 //AJAX/API - Load print data from Postman mock server
 //using $.getJSON() to retrieve images and descriptions
 //hosted images served from GitHub repo
-$.getJSON("https://77e4098c-b518-409a-9ce5-3f683e99513e.mock.pstmn.io/prints", function(data) {
+$.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", function(data) {
     let ids = ["bangarang", "fly", "together"];
 
     data.prints.forEach(function(print, index) {
@@ -222,3 +222,4 @@ $.getJSON("https://77e4098c-b518-409a-9ce5-3f683e99513e.mock.pstmn.io/prints", f
 }).fail(function(jqxhr, textStatus, error) {
     console.error("Error loading API data:", textStatus, error);
 });
+
