@@ -133,7 +133,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         isValid = false; //if selection is made for sets to false/valid
     }
 
-    // validate email or phone for selected preference
+    //validate email or phone for selected preference
     var emailInput = document.getElementById('emailInput').value.trim(); //get value of email
     var phoneInput = document.getElementById('phoneInput').value.trim(); //get value of phone
 
@@ -149,7 +149,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         isValid = false; //form sets to false 
     }
 
-    // Validate Comments
+    //validate comments
     var comments = document.getElementById('comments').value.trim();
     if (!comments) { //if comments are empty show error message
         showError('commentsError', 'Please leave us a comment.');
@@ -158,11 +158,11 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
     console.log("Validation complete. Is valid:", isValid); //log final form validity status after all checks
 
-    // If form is valid, process success message
+    //if form is valid, process success message
     if (isValid) {
         console.log("Form is valid. Preparing success message.");
 
-        // Prepare success message content with user input
+        //prepare success message content with user input
         var formDataMessage = `
             <p>First Name: ${firstName}</p>
             <p>Last Name: ${lastName}</p>
@@ -172,26 +172,23 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
             <p>Comments: ${comments}</p>
         `;
 
-        // Add formatted form data to success section of page
+        //add formatted form data to success section of page
         document.getElementById('formSub').innerHTML = formDataMessage.trim();
 
-        // Show success message by removing hide class and adding show class
+        //show success message by removing hide class and adding show class
         var successSection = document.querySelector("#success");
         successSection.classList.remove("hide");
         successSection.classList.add("show");
         console.log("Success message displayed."); //log that message is now visible
 
-        // clears inputs after displaying the success message
+        //clears inputs after displaying the success message
         document.getElementById('contactForm').reset();
     } else { //
         console.log("Form is invalid. Errors displayed."); //if invalid display errors in console
     }
 });
 
-//light/dark mode - event listener for click on light/dark mode icon
-document.getElementById("darkmode").addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-});
+
 
 //initialize jQuery UI tabs for prints section
 $(function () {
@@ -223,3 +220,33 @@ $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", f
     console.error("Error loading API data:", textStatus, error);
 });
 
+//web storage
+//handle dark mode preference on page load
+window.onload = function () {
+    //check if user has a saved preference in localStorage
+    if (localStorage.getItem("mode")) {
+        //retrieve saved mode
+        let mode = localStorage.getItem("mode");
+
+        //apply dark mode if the preference was set
+        if (mode === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+    }
+
+    // Add event listener to the dark mode toggle button
+    document.getElementById("darkmode").addEventListener("click", toggleMode);
+};
+
+// Function to toggle light/dark mode and update localStorage
+function toggleMode() {
+    // Toggle the class on the <body>
+    document.body.classList.toggle("dark-mode");
+
+    // Save the user's preference to localStorage
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("mode", "dark");
+    } else {
+        localStorage.setItem("mode", "light");
+    }
+}
