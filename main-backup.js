@@ -1,6 +1,44 @@
 "use strict";
 
 
+//product switcher
+// select DOM elements for the print buttons, print items, and description area
+var printBtns = document.querySelectorAll(".printTitleBtn"); // buttons that trigger the display of each print
+var printItems = document.querySelectorAll(".printItem");// list of all print items that can be shown/hidden
+var description = document.getElementById("printDescription");// the element that will display the description of the selected print
+
+//store descriptions for each print
+var descriptions = {
+    bangarang: "“RU.FI.OOOOOOOH!” This is your rallying cry to seek adventure, be rebellious, make mistakes, free yourself from the status quo, and be whatever age you feel. This bold black-and-white print might just become your new mantra. So dig deep, channel that cocky little rooster impression, and shout it loud enough to wake everyone the f up: “BANGARANG!”",
+    fly: "YES, you CAN! Plus, YOU CAN FIGHT, and best of all, YOU CAN CROW! So check your baggage at the gate and glide weightlessly as you wave goodbye to self-doubt because, *whispers*guess what? “You're doing it, Peter!” If the best way out is through, then the fastest way through is surely to let go and FLY.",
+    together: "TWO is ONE, and ONE is NONE. Being prepared means choosing the best team. Can we all pinky-promise to ask for help when needed, trust one another, and celebrate how our differences make us stronger? If we nurture our partnerships, feed them, and give them room to breathe, we can light the way and pass on a torch of support and strength."
+};
+
+//function to hide all prints and show the selected print based on id
+function togglePrintVisibility(targetId) {
+    //iterate over all print items and hide them
+    printItems.forEach(function (item) {
+        item.classList.remove("visible"); //remove visible class to hide print
+        //if the item's ID matches the target ID (print title clicked), show it and update the description
+        if (item.id === targetId) {
+            item.classList.add("visible");//add visible class to display the print
+            description.textContent = descriptions[targetId];//update the description based on the selected print
+        }
+    });
+}
+
+// Event listener for print title buttons
+printBtns.forEach(function (btn) {
+    //for each title button, add an event listener for the click event
+    btn.addEventListener("click", function () {
+        //get the target prints ID from the button's data-target attribute
+        var targetId = this.getAttribute("data-target");
+        console.log("Button clicked for:", targetId); //debugging line to check which button was clicked
+        //call the togglePrintVisibility function and pass the targetID to show selected print
+        togglePrintVisibility(targetId);
+    });
+});
+
 //guessing game
 document.querySelector("#game-form").addEventListener("submit", function (e) {
     e.preventDefault(); //prevent form from refreshing the page
@@ -152,60 +190,66 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
 
 
-//initialize jQuery UI tabs for prints section + dark mode 
+//initialize jQuery UI tabs for prints section
 $(function () {
-    // Initialize jQuery UI tabs
     $("#tabs").tabs();
-
-    // Handle dark mode preference on page load
-    if (localStorage.getItem("mode") === "dark") {
-        document.body.classList.add("dark-mode");
-    }
-
-    // Add event listener to the dark mode toggle button, if it exists
-    const toggle = document.getElementById("darkmode");
-    if (toggle) {
-        toggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem("mode", document.body.classList.contains("dark-mode") ? "dark" : "light");
-        });
-    }
 });
-
 
 
 //AJAX/API - Load print data from Postman mock server
 //using $.getJSON() to retrieve images and descriptions
 //hosted images served from GitHub repo
 $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", function(data) {
-    let accordion = $("#accordion");
-  
-    data.prints.forEach(function(print) {
-      accordion.append(`<h3 class="printTitle">${print.title}</h3>`);
-      accordion.append(`
-        <div class="printPanel">
-          <div class="printInfo">
-            <p class="size"><strong>Size:</strong> ${print.size}</p>
-            <p class="price"><strong>Price:</strong> ${print.price}</p>
-            <p class="description">${print.description}</p>
-          </div>
-          <figure>
-            <img src="${print.image}" alt="${print.title}">
-          </figure>
-        </div>
-      `);
+    let ids = ["bangarang", "fly", "together"];
+
+    data.prints.forEach(function(print, index) {
+        let tabId = ids[index];
+
+        //build output HTML with image and description
+        let output = `
+            <figure>
+                <img src="${print.image}" alt="${print.title}">
+            </figure>
+            <p class="description" id="desc-${tabId}">${print.description}</p>
+        `;
+
+        //inject into the tab content panel
+        document.getElementById(tabId).innerHTML = output;
     });
-    accordion.accordion({
-      heightStyle: "content",
-      collapsible: true,
-      active: false
-    });
-  }).fail(function(jqxhr, textStatus, error) {
+}).fail(function(jqxhr, textStatus, error) {
     console.error("Error loading API data:", textStatus, error);
-  });
-  
+});
 
+//web storage
+//handle dark mode preference on page load
+window.onload = function () {
+    //check if user has a saved preference in localStorage
+    if (localStorage.getItem("mode")) {
+        //retrieve saved mode
+        let mode = localStorage.getItem("mode");
 
+        //apply dark mode if the preference was set
+        if (mode === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+    }
+
+    //add event listener to the dark mode toggle button
+    document.getElementById("darkmode").addEventListener("click", toggleMode);
+};
+
+//function to toggle light/dark mode and update localStorage
+function toggleMode() {
+    // Toggle the class on the <body>
+    document.body.classList.toggle("dark-mode");
+
+    //save the user's preference to localStorage
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("mode", "dark");
+    } else {
+        localStorage.setItem("mode", "light");
+    }
+}
 
 //carousel function
 $(document).ready(function(){
