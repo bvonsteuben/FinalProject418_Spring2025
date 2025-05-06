@@ -105,7 +105,7 @@ html {
 }
 
 
-/*body styles*/
+/* body styles*/
 body {
     background-color: var(--light-gray);
     color: var(--black);
@@ -192,23 +192,24 @@ nav ul li {
 }
 
 
-/*first fold styles*/
+/* first fold styles*/
 #firstFold {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 160px 40px 250px 40px;
+    padding: 160px 40px 160px 40px;
 }
 
 
 /* ready section styles */
 #ready {
     display: flex;
-    align-items: flex-start;
+    align-items: center; 
     justify-content: space-between;
     flex-direction: row-reverse;
     padding: 0;
 }
+
 
 .wrapper1 {
     display: flex;
@@ -264,15 +265,14 @@ body.dark-mode .smallButton:hover {
     display: flex;
     max-width: 743px;
     height: auto;
-    padding: 20px 30px 0 40px;
+    padding: 0 0px 0 40px;
 }
 
 
 /* product display styles */
 #prints {
     width: 1280px;
-    margin-top: 40px;
-    padding: 30px;
+    padding: 150px 40px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -631,7 +631,7 @@ body.dark-mode .navLink:hover {
     color: var(--orange);
 }
 
-/*first fold styles*/
+/* first fold styles*/
 #firstFold h2 {
     font-family: var(--sans), serif;
     text-transform: uppercase;
@@ -679,18 +679,9 @@ body.dark-mode .navLink:hover {
     font-size: 6.66rem;
 }
 
-.description {
-    font-size: 18px;
-    line-height: 1.2;
-}
 
-.leftSide strong {
-    font-family: var(--sans);
-    text-transform: uppercase;
-    letter-spacing: .02rem;
-}
 
-/*g ame styles */
+/* game styles */
 #game h2,
 #gameInfo h2 {
     font-family: var(--sans);
@@ -785,6 +776,8 @@ body.dark-mode .navLink:hover {
 h2 {
     text-transform: uppercase;
 }
+
+
 /* footer styles */
 footer h3 {
     font-family: var(--sans);
@@ -798,50 +791,25 @@ footer p {
     line-height: 1.2;
 }
 
-/* accordion styles */
+/* ALL accordion styles */
 .printTitle {
     line-height: 1.3;
-    border: none;
-    text-align: left;
-    text-transform: uppercase;
-    font-family: var(--sans);
-    padding: 1rem 0;
-    margin: 0;
   }
-  /*
-  .printTitle:hover {
-    color: var(--orange);
-  }
-  
-  body.dark-mode .printTitle {
-    color: var(--light-gray);
-    border-color: var(--light-gray);
-  }
-  body.dark-mode .printTitle:hover {
-    color: var(--orange);
-  }
-  
-  /* accordion panel layout */
-  .printPanel {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-end;
-  }
-  
-  
+
+
   /* image */
   .printPanel img {
-    width: 85%;
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
     height: auto;
     filter: drop-shadow(-18px 10px 20px rgba(0, 0, 0, 0.4));
-    margin: 0;
-    max-width: 600px;
   }
   
   /* info Block */
   .printInfo {
-    flex: 1;
-    max-width: 600px;
+    flex-basis: 90%;
+    max-width: 515px;
   }
   
   .printInfo .size strong,
@@ -856,35 +824,41 @@ footer p {
     font-family: var(--wix);
     font-size: 18px;
     line-height: 1.4;
-    margin: 20px 0;
+    margin: 20px 0 20px ;
+    width: 350px;
   }
 
   #prints #accordion {
     max-width: 1210px; 
     padding-top: 2.5rem;
     width: 100%;
+    margin: 0 auto;
   }
 
   #accordion .printPanel {
-    padding: 3rem 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 2rem 1rem 0;
+    background-color: var(--light-gray);
+    max-width: 1100px;
+    margin: 0 auto;
   }
+  
 
   /* accordion style overrides */
 #accordion .ui-state-active {
-    background-color: var(--orange) !important;
-    color: var(--light-gray) !important;
-    border-color: var(--orange) !important;
+    color: var(--black) !important;
   }
   
   #accordion .ui-accordion-header {
     background-color: transparent;
-    color: var(--black);
     border: none;
     font-family: var(--sans);
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    text-align: left;
-    padding: 0 1rem;
+    color: var(--orange);
   }
   
   body.dark-mode #accordion .ui-state-active {
@@ -896,6 +870,46 @@ footer p {
     color: var(--light-gray);
   }
   
+  .sizePriceRow {
+    display: flex;
+    gap: 3.5rem;
+    margin-top: 1rem;
+  }
   
+  #accordion .ui-accordion-header .ui-icon {
+    background-image: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+  }
+  
+  #accordion .ui-accordion-header::before {
+    content: "";
+    background-image: url("Images/biziAsterisks.svg");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
     
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
   
+  #accordion .ui-widget-content {
+    border: none !important;
+  }
+
+  #accordion .ui-accordion-header.ui-state-active::before {
+    transform: rotate(90deg);
+    background-image: url("Images/biziAsterisks_black.svg"); 
+  }
+
+
+

@@ -183,15 +183,18 @@ $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", f
       accordion.append(`
         <div class="printPanel">
           <div class="printInfo">
-            <p class="size"><strong>Size:</strong> ${print.size}</p>
             <p class="description">${print.description}</p>
-            <p class="price"><strong>Price:</strong> ${print.price}</p>
+            <div class="sizePriceRow">
+              <p class="size"><strong>Size:</strong> ${print.size}</p>
+              <p class="price"><strong>Price:</strong> ${print.price}</p>
+            </div>
           </div>
           <figure>
             <img src="${print.image}" alt="${print.title}">
           </figure>
         </div>
       `);
+      
     });
   
     // Re-initialize accordion
