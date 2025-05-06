@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -16,35 +16,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 
@@ -57,7 +57,7 @@ html {
 @font-face {
     font-family: 'reanSans';
     src: url('/Fonts/REANIMATION Sans Serif.woff2') format('woff2'),
-         url('/Fonts/REANIMATION Sans Serif.woff') format('woff');
+    url('/Fonts/REANIMATION Sans Serif.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -65,7 +65,7 @@ html {
 @font-face {
     font-family: 'reanBlock';
     src: url('/Fonts/reanimation_blackletter-webfont.woff2') format('woff2'),
-         url('/Fonts/reanimation_blackletter-webfont.woff') format('woff');
+    url('/Fonts/reanimation_blackletter-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -175,7 +175,7 @@ header {
 
 
 /* nav styles */
-#darkmode {
+    #darkmode {
     cursor: pointer;
 }
 
@@ -364,14 +364,14 @@ body.dark-mode #game-result {
 #gameInfo {
     text-align: right;
     margin-left: auto;
-    
+
 }
 
 #gameInfo figure {
     display: inline-block;
     margin-top: 40px;
     filter: drop-shadow(-10px 4px 7px rgba(0, 0, 0, 0.2));
-    
+
 }
 
 #gameInfo .carousel {
@@ -380,20 +380,20 @@ body.dark-mode #game-result {
     margin-left: auto;
     display: inline-block;
     filter: drop-shadow(-10px 4px 7px rgba(0, 0, 0, 0.2));
-    
-  }
-  
-  #gameInfo .carousel figure {
+
+}
+
+#gameInfo .carousel figure {
     padding-left: 0;
     max-width: 250px;
-  }
-  
-  #gameInfo img {
+}
+
+#gameInfo img {
     width: 100%;
     height: auto;
     display: block;
-  }
-  
+}
+
 
 /* contact and form styling */
 #contactWrapper {
@@ -700,8 +700,8 @@ body.dark-mode .navLink:hover {
 }
 
 #game span {
-    font-family: var(--blkletter);
-    text-transform: none;
+font-family: var(--blkletter);
+text-transform: none;
 }
 
 #gameInfo span {
@@ -792,50 +792,50 @@ footer p {
 }
 
 /* ALL accordion styles */
-.printTitle {
+    .printTitle {
     line-height: 1.3;
-  }
+}
 
 
-  /* image */
-  .printPanel img {
+/* image */
+.printPanel img {
     display: block;
     margin: 0 auto;
     max-width: 400px;
     height: auto;
     filter: drop-shadow(-18px 10px 20px rgba(0, 0, 0, 0.4));
-  }
-  
-  /* info Block */
-  .printInfo {
+}
+
+/* info Block */
+.printInfo {
     flex-basis: 90%;
     max-width: 515px;
-  }
-  
-  .printInfo .size strong,
-  .printInfo .price strong {
+}
+
+.printInfo .size strong,
+.printInfo .price strong {
     text-transform: uppercase;
     letter-spacing: .02rem;
     font-weight: bold;
     font-family: var(--sans);
-  }
-  
-  .printInfo .description {
+}
+
+.printInfo .description {
     font-family: var(--wix);
     font-size: 18px;
     line-height: 1.4;
     margin: 20px 0 20px ;
     width: 350px;
-  }
+}
 
-  #prints #accordion {
+#prints #accordion {
     max-width: 1210px; 
     padding-top: 2.5rem;
     width: 100%;
     margin: 0 auto;
-  }
+}
 
-  #accordion .printPanel {
+#accordion .printPanel {
     display: flex;
     gap: 3rem;
     align-items: center;
@@ -844,39 +844,42 @@ footer p {
     background-color: var(--light-gray);
     max-width: 1100px;
     margin: 0 auto;
-  }
-  
+}
 
-  /* accordion style overrides */
+body.dark-mode #accordion .printPanel {
+    background-color: var(--black);
+    color: var(--light-gray);
+}
+
+/* accordion style overrides */
 #accordion .ui-state-active {
     color: var(--black) !important;
-  }
-  
-  #accordion .ui-accordion-header {
+}
+
+#accordion .ui-accordion-header {
     background-color: transparent;
     border: none;
     font-family: var(--sans);
     font-size: 2.5rem;
     text-transform: uppercase;
     color: var(--orange);
-  }
-  
-  body.dark-mode #accordion .ui-state-active {
-    background-color: var(--orange) !important;
-    color: var(--light-gray) !important;
-  }
-  
-  body.dark-mode #accordion .ui-accordion-header {
+}
+
+body.dark-mode #accordion .ui-state-active {
+    color: var(--orange) !important;
+}
+
+body.dark-mode #accordion .ui-accordion-header {
     color: var(--light-gray);
-  }
-  
-  .sizePriceRow {
+}
+
+.sizePriceRow {
     display: flex;
     gap: 3.5rem;
     margin-top: 1rem;
-  }
-  
-  #accordion .ui-accordion-header .ui-icon {
+}
+
+#accordion .ui-accordion-header .ui-icon {
     background-image: none;
     background-color: transparent;
     width: 30px;
@@ -886,9 +889,9 @@ footer p {
     background-repeat: no-repeat;
     background-size: contain;
     content: "";
-  }
-  
-  #accordion .ui-accordion-header::before {
+}
+
+#accordion .ui-accordion-header::before {
     content: "";
     background-image: url("Images/biziAsterisks.svg");
     background-repeat: no-repeat;
@@ -896,20 +899,35 @@ footer p {
     width: 40px;
     height: 40px;
     display: inline-block;
-    
     transform-origin: center;
     transition: transform 0.3s ease;
-  }
+}
 
-  
-  #accordion .ui-widget-content {
+body.dark-mode #accordion .ui-accordion-header::before {
+    content: "";
+    background-image: url("Images/biziAsterisks_gry.svg");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+#accordion .ui-widget-content {
     border: none !important;
-  }
+}
 
-  #accordion .ui-accordion-header.ui-state-active::before {
+#accordion .ui-accordion-header.ui-state-active::before {
     transform: rotate(90deg);
     background-image: url("Images/biziAsterisks_black.svg"); 
-  }
+}
+
+body.dark-mode #accordion .ui-accordion-header.ui-state-active::before {
+    transform: rotate(90deg);
+    background-image: url("Images/biziAsterisks.svg"); 
+}
 
 
 
