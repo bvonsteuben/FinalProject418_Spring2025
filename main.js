@@ -152,11 +152,9 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
 
 
-//initialize jQuery UI tabs for prints section + dark mode 
+//initialize jQuery dark mode 
 $(function () {
-    // Initialize jQuery UI tabs
-    $("#tabs").tabs();
-
+    
     // Handle dark mode preference on page load
     if (localStorage.getItem("mode") === "dark") {
         document.body.classList.add("dark-mode");
@@ -186,8 +184,8 @@ $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", f
         <div class="printPanel">
           <div class="printInfo">
             <p class="size"><strong>Size:</strong> ${print.size}</p>
-            <p class="price"><strong>Price:</strong> ${print.price}</p>
             <p class="description">${print.description}</p>
+            <p class="price"><strong>Price:</strong> ${print.price}</p>
           </div>
           <figure>
             <img src="${print.image}" alt="${print.title}">
@@ -195,14 +193,17 @@ $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", f
         </div>
       `);
     });
+  
+    // Re-initialize accordion
     accordion.accordion({
       heightStyle: "content",
       collapsible: true,
-      active: false
+      active: 0 // Open first item on load
     });
   }).fail(function(jqxhr, textStatus, error) {
     console.error("Error loading API data:", textStatus, error);
   });
+  
   
 
 
