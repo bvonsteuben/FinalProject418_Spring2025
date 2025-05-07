@@ -86,44 +86,37 @@
     <section id="prints">
         <h2><span>New!</span> Prints by Bizi Creative</h2>
         <div id="accordion">
-        <!-- JavaScript will inject <h3> + <div> pairs here -->
         </div>
     </section>
   
 
-        <!--game section -->
+    <!-- Game Section Wrapper -->
         <section id="game">
-            <h2>Play <span>Now!</span></h2>
-            <p>Enter a number between 1 and 10</p>
-            <form id="game-form">
-                <label for="user-number" class="sr-only">User Number</label>
-                <input type="text" id="user-number" name="user-number">
-                <button type="submit">Submit</button>
-                <div id="game-error"></div>
-            </form>
-            <p id="guess-output" aria-live="polite"></p>
-            <p id="win-message" aria-live="polite"></p>
-            <p id="game-result" aria-live="polite"></p>
+        <h2>Play <span>Now!</span></h2>
+        <p id="game-instructions"> Enter a number between 1 and 10</p>
+        <form id="game-form">
+            <label for="user-number" class="sr-only">User Number</label>
+            <input type="text" id="user-number" name="user-number">
+            <button type="submit">Submit</button>
+            <div id="game-error"></div>
+        </form>
+        <p id="guess-output" aria-live="polite"></p>
+        <p id="win-message" aria-live="polite"></p>
+        <p id="game-result" aria-live="polite"></p>
+    
+        <!-- Game instructions -->
+        <p>Enter a number between 1 and 10 in the box to the left. We will generate a random number. If your number matches, you win!</p>
         </section>
+    
         <section id="gameInfo">
-            <h2><span>Win</span> 3 Free Postcards</h2>
-            <p>Enter a number between 1 and 10 in the box to the left.</p>
-            <p>We will generate a random number.</p>
-            <p>If your number matches, you win!</p>
-          
-            <div class="carousel">
-              <figure>
-                <img src="Images/Popsicle_GC.jpg" alt="Graphic of a red popsicle...">
-              </figure>
-              <figure>
-                <img src="Images/ThankYouBag_GC.jpg" alt="Graphic of a classic plastic grocery...">
-              </figure>
-              <figure>
-                <img src="Images/LongTimeNoSee_GC.jpg" alt="Graphic of a pear of round daisy...">
-              </figure>
-            </div>
-          </section>
-          
+        <h2><span>Win</span> 3 Free Postcards</h2>
+        <div class="carousel">
+            <figure><img src="Images/Popsicle_GC.jpg" alt="Graphic of a red popsicle..."></figure>
+            <figure><img src="Images/ThankYouBag_GC.jpg" alt="Graphic of a classic plastic grocery..."></figure>
+            <figure><img src="Images/LongTimeNoSee_GC.jpg" alt="Graphic of a pair of round daisy..."></figure>
+        </div>
+        </section>
+  
         <!-- contact sections-->
         <div id="contactWrapper">
             <section id="contact">

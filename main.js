@@ -9,10 +9,10 @@ document.querySelector("#game-form").addEventListener("submit", function (e) {
     var userGuess = parseInt(document.querySelector("#user-number").value);
     //generate random number between 1 and 10
     var randomNumber = Math.floor(Math.random() * 10) + 1;
-    // Get reference to the user input field
+    // get reference to the user input field
     var userNumberInput = document.querySelector("#user-number");
 
-    // Remove any previous error message before displaying new ones
+    // remove any previous error message before displaying new ones
     var existingError = document.querySelector("#game-error");
     if (existingError) {
         existingError.innerHTML = ''; // Clear previous error if any
@@ -46,7 +46,7 @@ document.querySelector("#game-form").addEventListener("submit", function (e) {
 });
 
 
-// Error handling functions
+// error handling functions
 function showError(errorId, errorMessage) {
     var errorContainer = document.getElementById(errorId);
     if (errorContainer) {
@@ -155,12 +155,12 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 //initialize jQuery dark mode 
 $(function () {
     
-    // Handle dark mode preference on page load
+    // handle dark mode preference on page load
     if (localStorage.getItem("mode") === "dark") {
         document.body.classList.add("dark-mode");
     }
 
-    // Add event listener to the dark mode toggle button, if it exists
+    // add event listener to the dark mode toggle button, if it exists
     const toggle = document.getElementById("darkmode");
     if (toggle) {
         toggle.addEventListener("click", function () {
@@ -174,7 +174,7 @@ $(function () {
 
 //AJAX/API - Load print data from Postman mock server
 //using $.getJSON() to retrieve images and descriptions
-//hosted images served from GitHub repo
+//hosted images in GitHub repo
 $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", function(data) {
     let accordion = $("#accordion");
   
@@ -197,11 +197,11 @@ $.getJSON("https://d5ffc907-a422-4020-a5b6-171e8b095ad1.mock.pstmn.io/prints", f
       
     });
   
-    // Re-initialize accordion
+    // re-initialize accordion
     accordion.accordion({
       heightStyle: "content",
       collapsible: true,
-      active: 0 // Open first item on load
+      active: 0 
     });
   }).fail(function(jqxhr, textStatus, error) {
     console.error("Error loading API data:", textStatus, error);
@@ -216,7 +216,7 @@ $(document).ready(function(){
     $('.carousel').slick({
       dots: true,
       arrows: true,
-      autoplay: false,  // optional
+      autoplay: false, 
       adaptiveHeight: true
     });
   });
